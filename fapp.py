@@ -11,16 +11,20 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 def home():
     
     mars = mongo.db.mars.find_one()
+    return render_template("repress.html", mars=mars, dfe="Mission on Mars")
 
-    return render_template("repress.html", mars=mars)
 
 @app.route("/scrape")
 def scrape():
-
+    
+    
     # Run the scrape function
+    
+    
     mars = mongo.db.mars
-    mars_data = scrapy.scrape_all()
-    mars.update({}, mars_data, upsert=True)
+    mars_data = scrapy.scrape_info()
+    mars.update_one({}, {"$set": mars_data}, upsert=True)
+    return redirect("/")
 
 
 
