@@ -44,18 +44,12 @@ def scrape_info():
     
     file_path = soup3.find("table", class_="table table-striped")
     file_path
-    data_frame = pd.read_html(str(file_path))[0]
-    dfi.export(data_frame,"mytable.png")
-    main_image2 = "assets/images/mars1.jpg"
-    
-    malist = {
-        "sloth": news_title,
-        "frolick": news_p
-    }
     
     milist = {
+        "sloth": news_title,
+        "frolick": news_p,
         "sleuth": main_image,
-        "knight": main_image2
+        "knight": file_path
     }
     
     browser.quit()
