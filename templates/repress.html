@@ -12,32 +12,60 @@
 </head>    
 <body>
     <div class="container">
-        <div class="jumbotron text-center">
-            <h1>{{ dfe }}</h1>
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">scrape</a></p>
+      <div class="jumbotron text-center">
+          <h1>{{ dfe }}</h1>
+          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">scrape</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-14 align-self-center">
+          <h3 class="text-center">Latest Mars News</h3>
+          <h4 class="text-center">{{ mars.sloth }}</h4>
+          <p class="text-center">{{ mars.frolick }}</p>
         </div>
-        <div class="container">
-            <div class="row">
-              <div class="col-sm-20">
-                <h3>Latest Mars News</h3>
-                <h4>{{ mars.sloth }}</h4>
-                <p>{{ mars.frolick }}</p>
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <h1>Featured Image</h1>
-                    <img src={{ mars.sleuth }} alt="Girl in a jacket", width="500">
-                </div>
-                <div class="col-sm-6">
-                  <h1>Featured Image</h1>
-                  <img src="assets/images/mars1.jpg">
-                  <h4>{{ mars.knight }}</h4>
-                </div>
-              </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-sm-7">
+          <h1 class="text-center">Featured Image</h1>
+          <img src={{ mars.sleuth }} alt="Girl in a jacket", width="650">
         </div>
-        
-
+        <div class="col-sm-2">
+          
+        </div>
+        <div class="col-sm-3">
+          <h1 class="text-center">Mars Facts</h1>
+          <div class="table-responsive">
+            <table class="table table-hover">
+              {{mars.mars_data|safe}}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <h1 class="text-center">Mars Hemispheres</h1>
+        <div class="col-sm-3">
+          <img src={{ mars.first }} alt="cell", width="260">
+          <h2>{{mars.Cerberus}}</h2>
+        </div>
+        <div class="col-sm-3">
+          <img src={{ mars.second }} alt="cell", width="260">
+          <h2>{{mars.Schiaparelli}}</h2>
+        </div>
+        <div class="col-sm-3">
+          <img src={{ mars.third }} alt="cell", width="260">
+          <h2>{{mars.Syrtis_Major}}</h2>
+        </div>
+        <div class="col-sm-3">
+          <img src={{ mars.fourth }} alt="cell", width="260">
+          <h2>{{mars.Valles}}</h2>
+        </div>
+      </div>
+    </div>
 </body>
 
 

@@ -23,8 +23,12 @@ def scrape():
     
     mars = mongo.db.mars
     mars_data = scrapy.scrape_info()
+    mars_data = scrapy.scrape_marsFacts()
+    mars_data = scrapy.mars_hemispheres()
+    
+    
     mars.update_one({}, {"$set": mars_data}, upsert=True)
-    return redirect("/")
+    return redirect("/", code=302)
 
 
 
