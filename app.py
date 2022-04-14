@@ -11,7 +11,7 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 def home():
     
     mars = mongo.db.mars.find_one()
-    return render_template("repress.html", mars=mars, dfe="Mission on Mars")
+    return render_template("index.html", mars=mars, dfe="Mission on Mars")
 
 
 @app.route("/scrape")
